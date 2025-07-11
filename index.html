@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva - Pet Wellness Coming Soon</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      color: #2c3e50;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    img.logo {
+      margin-top: 60px;
+      max-width: 150px;
+      height: auto;
+    }
+
+    h1 {
+      font-size: 2.8rem;
+      margin-top: 20px;
+      margin-bottom: 0.2em;
+      color: #34495e;
+    }
+
+    p.subheading {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 1.5em;
+      color: #5d6d7e;
+    }
+
+    form {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5em;
+      margin-bottom: 2em;
+    }
+
+    input[type="email"] {
+      padding: 0.8em;
+      font-size: 1rem;
+      border: 2px solid #3498db;
+      border-radius: 5px;
+      width: 250px;
+      max-width: 90vw;
+    }
+
+    button {
+      padding: 0.8em 1.5em;
+      font-size: 1rem;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    #message {
+      margin-top: 1em;
+      color: green;
+      font-weight: 500;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2em 1em;
+      background-color: #ecf0f1;
+      width: 100%;
+      font-size: 0.9rem;
+      color: #7f8c8d;
+    }
+
+    .social-icons {
+      margin-top: 1em;
+    }
+
+    .social-icons a {
+      margin: 0 0.5em;
+      color: #34495e;
+      text-decoration: none;
+      font-size: 1.2rem;
+    }
+
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <img src="logo.png" alt="Vetiva Logo" class="logo" />
+  <h1>Vetiva</h1>
+  <p class="subheading">Your pet’s health, our care. We're launching soon with affordable, loving pet insurance.</p>
+
+  <form id="subscribe-form">
+    <input type="email" id="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Notify Me</button>
+  </form>
+  <div id="message"></div>
+
+  <footer>
+    <div>&copy; 2025 Vetiva. All rights reserved.</div>
+    <div>Contact us: <a href="mailto:hello@vetiva.ro">hello@vetiva.ro</a></div>
+    <div class="social-icons">
+      <a href="#" aria-label="Twitter">🐦</a>
+      <a href="#" aria-label="Instagram">📸</a>
+      <a href="#" aria-label="Facebook">📘</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('subscribe-form');
+    const messageDiv = document.getElementById('message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email = form.email.value;
+      if (email) {
+        messageDiv.textContent = 'Thank you! We’ll notify you at ' + email;
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
