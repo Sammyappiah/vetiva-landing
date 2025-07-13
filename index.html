@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva – Pet Insurance Coming Soon</title>
+  <meta name="description" content="Vetiva is a modern pet wellness brand offering loving, affordable pet insurance. Launching soon.">
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --background: #fefefe;
+      --text: #2c3e50;
+      --muted: #7f8c8d;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f5f7fa);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 4em 1.5em 2em;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 2.5em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      margin: 0 0 0.3em;
+      text-align: center;
+    }
+
+    .subheadline {
+      font-size: 1.125rem;
+      text-align: center;
+      margin-bottom: 2em;
+      color: var(--text);
+      max-width: 600px;
+    }
+
+    .form-card {
+      background-color: var(--card-bg);
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px var(--shadow);
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input[type="email"] {
+      padding: 1em;
+      border: 1.5px solid var(--primary);
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #357ab8;
+    }
+
+    button {
+      padding: 1em;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    .coming-soon {
+      margin-top: 1.5em;
+      font-size: 0.95rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2em 0 1em;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 3em 1em;
+      }
+
+      h1 {
+        font-size: 1.6rem;
+      }
+
+      .subheadline {
+        font-size: 1rem;
+      }
+
+      .form-card {
+        padding: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Vetiva Logo" class="logo" />
+    <h1>Caring for your pet’s health.</h1>
+    <p class="subheadline">Affordable, loving pet insurance made simple.</p>
+
+    <div class="form-card">
+      <form id="email-form" action="https://formspree.io/f/xrblzpww" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" required />
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit">Join Mailing List</button>
+      </form>
+    </div>
+
+    <p class="coming-soon">Pet insurance coming soon.</p>
+  </div>
+
+  <footer>
+    © 2025 Vetiva. All rights reserved. <br>
+    <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+
+  <script>
+    const form = document.getElementById("email-form");
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const action = form.getAttribute("action");
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          alert("Thank you! We'll be in touch.");
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Network error. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
