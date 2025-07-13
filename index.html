@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva – Loving Pet Insurance Coming Soon</title>
+  <meta name="description" content="Vetiva is a modern pet wellness brand offering loving, affordable pet insurance. Launching soon.">
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --background: #fefefe;
+      --accent: #eaf6ff;
+      --text: #2c3e50;
+      --success: #27ae60;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2em;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #fefefe, #eaf6ff);
+    }
+
+    img.logo {
+      width: 120px;
+      margin-top: 2em;
+      margin-bottom: 1em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0.5em 0;
+    }
+
+    p.tagline {
+      text-align: center;
+      font-size: 1.1rem;
+      max-width: 600px;
+      margin-bottom: 2em;
+    }
+
+    .form-card {
+      background: white;
+      padding: 1.5em;
+      border-radius: 10px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input[type="email"] {
+      padding: 0.9em;
+      border: 2px solid var(--primary);
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #2980b9;
+    }
+
+    button {
+      padding: 0.9em;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    #success-message {
+      margin-top: 1em;
+      color: var(--success);
+      display: none;
+    }
+
+    .trust-points {
+      margin: 2em 0 1em;
+      text-align: center;
+    }
+
+    .trust-points ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .trust-points li {
+      margin: 0.5em 0;
+      font-size: 1rem;
+    }
+
+    .countdown-placeholder,
+    .testimonials-placeholder {
+      margin: 2em auto;
+      text-align: center;
+      font-style: italic;
+      opacity: 0.7;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2em 0 1em;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .form-card {
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" data-aos="fade-up">
+    <img src="logo.png" alt="Vetiva Logo" class="logo" />
+    <h1>Your pet’s health, our care.</h1>
+    <p class="tagline">We're launching soon with affordable, loving pet insurance.</p>
+
+    <div class="form-card">
+      <form id="email-form" action="https://formspree.io/f/xrblzpww" method="POST">
+        <input type="email" name="email" placeholder="e.g. you@example.com" required />
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit">Notify Me</button>
+      </form>
+      <div id="success-message">Thank you! We'll be in touch.</div>
+    </div>
+
+    <div class="trust-points">
+      <ul>
+        <li>✅ Affordable coverage</li>
+        <li>✅ Fast claims</li>
+        <li>✅ Vets you can trust</li>
+      </ul>
+    </div>
+
+    <div class="countdown-placeholder">⏳ Countdown coming soon...</div>
+    <div class="testimonials-placeholder">💬 Testimonials section coming soon...</div>
+  </div>
+
+  <footer>
+    © 2025 Vetiva. All rights reserved. <br>
+    <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const form = document.getElementById("email-form");
+    const successMsg = document.getElementById("success-message");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const action = form.getAttribute("action");
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMsg.style.display = "block";
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Network error. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
