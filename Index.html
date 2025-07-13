@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vetiva - Pet Wellness Coming Soon</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffdf7;
+      color: #2d2d2d;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 100vh;
+      padding: 1em;
+    }
+
+    img.logo {
+      width: 120px;
+      margin-bottom: 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.2em;
+      color: #3d3d3d;
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin: 0 auto 1.5em;
+      color: #555;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5em;
+      margin-bottom: 2em;
+    }
+
+    input[type="email"] {
+      padding: 0.7em;
+      border: 2px solid #3498db;
+      border-radius: 4px;
+      font-size: 1rem;
+      width: 250px;
+      max-width: 90vw;
+    }
+
+    button {
+      padding: 0.7em 1.5em;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    .footer {
+      margin-top: 3em;
+      font-size: 0.9rem;
+      color: #888;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <img src="logo.png" alt="Vetiva Logo" class="logo" />
+  <h1>Vetiva</h1>
+  <p>Your pet’s health, our care. We're launching soon with affordable, loving pet insurance.</p>
+
+  <form id="subscribe-form">
+    <input type="email" name="email" placeholder="Enter your email" required />
+    <button type="submit">Notify Me</button>
+  </form>
+
+  <div class="footer">
+    &copy; 2025 Vetiva. All rights reserved.<br />
+    Contact us: <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </div>
+
+  <script>
+    const form = document.getElementById('subscribe-form');
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      const email = form.email.value;
+      if (email) {
+        alert("Thank you! We'll notify you at " + email);
+        form.reset();
+      }
+    });
+  </script>
+</body>
+</html>
