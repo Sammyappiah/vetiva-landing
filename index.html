@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva – Loving Pet Insurance Coming Soon</title>
+  <meta name="description" content="Vetiva is a modern pet wellness brand offering loving, affordable pet insurance. Launching soon.">
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --background: #fdfdfd;
+      --accent: #f5f7fa;
+      --text: #2c3e50;
+      --success: #27ae60;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 4em 1.5em 2em;
+      min-height: 100vh;
+      background: linear-gradient(to bottom right, #ffffff, #f5f7fa);
+    }
+
+    img.logo {
+      width: 140px;
+      margin-top: 3em;
+      margin-bottom: 2em;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin: 0.2em 0 0.5em;
+      font-weight: 600;
+    }
+
+    p.tagline {
+      text-align: center;
+      font-size: 1.125rem;
+      max-width: 600px;
+      margin-bottom: 2.5em;
+      color: #444;
+    }
+
+    .form-card {
+      background: rgba(255, 255, 255, 0.97);
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 14px 35px rgba(0, 0, 0, 0.08);
+      max-width: 420px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid #e1e4e8;
+    }
+
+    .email-input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .email-icon {
+      position: absolute;
+      left: 12px;
+      font-size: 1.2rem;
+      opacity: 0.6;
+    }
+
+    input[type="email"] {
+      width: 100%;
+      padding: 0.9em 0.9em 0.9em 2.5em;
+      border: 2px solid var(--primary);
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #2980b9;
+    }
+
+    button {
+      margin-top: 1em;
+      padding: 1em;
+      font-size: 1rem;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    .coming-soon-note {
+      margin-top: 1.5em;
+      font-size: 1rem;
+      color: #555;
+      text-align: center;
+      opacity: 0.85;
+    }
+
+    #success-message {
+      margin-top: 1em;
+      color: var(--success);
+      display: none;
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 2em 0 1em;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .form-card {
+        padding: 1.2em;
+      }
+
+      img.logo {
+        width: 110px;
+        margin-top: 2em;
+        margin-bottom: 1.5em;
+      }
+
+      h1 {
+        font-size: 1.7rem;
+      }
+
+      p.tagline {
+        font-size: 1rem;
+      }
+
+      .coming-soon-note {
+        font-size: 0.95rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container" data-aos="fade-up">
+    <img src="logo.png" alt="Vetiva Logo" class="logo" />
+    <h1>Caring for your pet’s health.</h1>
+    <p class="tagline">Affordable, loving pet insurance made simple.</p>
+
+    <div class="form-card">
+      <form id="email-form" action="https://formspree.io/f/xrblzpww" method="POST">
+        <div class="email-input-wrapper">
+          <span class="email-icon">📩</span>
+          <input type="email" name="email" placeholder="e.g. you@example.com" required />
+        </div>
+        <input type="text" name="_gotcha" style="display:none" />
+        <button type="submit">Join Mailing List</button>
+      </form>
+      <div id="success-message">Thank you! We'll be in touch.</div>
+    </div>
+
+    <p class="coming-soon-note">Pet insurance coming soon.</p>
+  </div>
+
+  <footer>
+    © 2025 Vetiva. All rights reserved. <br>
+    <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+
+    const form = document.getElementById("email-form");
+    const successMsg = document.getElementById("success-message");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const action = form.getAttribute("action");
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          successMsg.style.display = "block";
+        } else {
+          alert("Oops! Something went wrong. Please try again.");
+        }
+      } catch (err) {
+        alert("Network error. Please try again later.");
+      }
+    });
+  </script>
+</body>
+</html>
