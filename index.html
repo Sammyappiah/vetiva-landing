@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva – MVP Landing Page</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    header {
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid #e5e5e5;
+    }
+    header img {
+      height: 40px;
+    }
+    main {
+      max-width: 800px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .plan {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+    .plan h2 {
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .plan ul {
+      padding-left: 1rem;
+    }
+    .add-ons {
+      margin-top: 2rem;
+    }
+    form {
+      background-color: #ffffff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+      margin-top: 2rem;
+    }
+    form input[type="email"] {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    form button {
+      margin-top: 1rem;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      background-color: #0055ff;
+      color: #fff;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: #666;
+      font-size: 0.9rem;
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Vetiva Logo" />
+  </header>
+  <main>
+    <h1>Vetiva Wellness Plans</h1>
+
+    <section class="plan">
+      <h2>Basic – €10 / month</h2>
+      <ul>
+        <li>1 Core Vaccination per Year</li>
+        <li>1 Deworming Treatment per Year</li>
+        <li>Annual Health Checkup</li>
+      </ul>
+    </section>
+
+    <section class="plan">
+      <h2>Premium – €18 / month</h2>
+      <ul>
+        <li>Everything in Basic</li>
+        <li>2 Additional In-Person Vet Consultations per Year</li>
+      </ul>
+    </section>
+
+    <section class="add-ons">
+      <div class="plan">
+        <h2>Optional Add-Ons</h2>
+        <ul>
+          <li><strong>Wellness Boost – €5/month:</strong> Dental cleaning, flea & tick prevention, additional vaccinations</li>
+          <li><strong>24/7 Vet Advice – €3/month:</strong> Unlimited access to licensed veterinarians via helpline</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="plan">
+      <h2>Direct Vet Billing</h2>
+      <p>We offer direct billing with participating veterinary clinics, so you don’t have to pay upfront and wait for reimbursement.</p>
+    </section>
+
+    <section class="plan">
+      <h2>Excess (Deductible)</h2>
+      <ul>
+        <li>Standard excess: €50 per claim</li>
+        <li>Optional variable excess (5–10%) available to reduce your monthly premium</li>
+      </ul>
+    </section>
+
+    <form>
+      <h2>Join Our Mailing List</h2>
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      <button type="submit">Subscribe</button>
+      <p style="margin-top: 0.5rem; font-size: 0.9rem; color: #555">We’ll notify you when we launch and send your discount. No spam.</p>
+    </form>
+  </main>
+  <footer>
+    © 2025 Vetiva · <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+</body>
+</html>
