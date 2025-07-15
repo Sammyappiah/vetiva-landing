@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Vetiva MVP Landing Page</title>
+<style>
+  /* Reset and base styles */
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: #f5f7fa;
+    color: #222;
+    line-height: 1.6;
+  }
+  .container {
+    max-width: 600px;
+    background: #fff;
+    margin: 40px auto;
+    padding: 30px 40px;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  }
+  header {
+    text-align: center;
+    margin-bottom: 35px;
+  }
+  header img {
+    max-width: 160px;
+    height: auto;
+    margin-bottom: 20px;
+  }
+  h1 {
+    margin: 0 0 10px;
+    font-weight: 700;
+    color: #1a73e8;
+    font-size: 1.9rem;
+  }
+  h2 {
+    color: #1a73e8;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1a73e8;
+    padding-bottom: 6px;
+  }
+  h3 {
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+  ul {
+    list-style: disc inside;
+    margin: 0 0 20px 0;
+    padding-left: 0;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+  .note {
+    font-style: italic;
+    color: #555;
+    font-size: 0.9rem;
+  }
+  form {
+    margin-top: 20px;
+  }
+  input[type="email"] {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1.8px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    transition: border-color 0.3s ease;
+  }
+  input[type="email"]:focus {
+    border-color: #1a73e8;
+    outline: none;
+  }
+  button {
+    width: 100%;
+    background: #1a73e8;
+    border: none;
+    padding: 14px 0;
+    color: #fff;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  button:hover {
+    background: #1669c1;
+  }
+  .success-message {
+    display: none;
+    margin-top: 15px;
+    color: green;
+    font-weight: 600;
+    text-align: center;
+  }
+  footer {
+    text-align: center;
+    color: #777;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+  }
+  footer a {
+    color: #1a73e8;
+    text-decoration: none;
+  }
+  footer a:hover {
+    text-decoration: underline;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .container {
+      margin: 20px;
+      padding: 25px 20px;
+    }
+    h1 {
+      font-size: 1.6rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <img src="logo.png" alt="Vetiva Logo" />
+    <h1>Vetiva MVP Landing Page</h1>
+  </header>
+
+  <section>
+    <h2>Pricing Plans (Monthly Billing)</h2>
+
+    <h3>Basic – €10 / month</h3>
+    <ul>
+      <li>1 Core Vaccination per Year</li>
+      <li>1 Deworming Treatment per Year</li>
+      <li>Annual Health Checkup</li>
+    </ul>
+
+    <h3>Premium – €18 / month</h3>
+    <ul>
+      <li>Everything in Basic</li>
+      <li>2 Additional Vet Consultations per Year (online or in-clinic)</li>
+      <li>Dental Cleaning (once per year)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Mailing List Form</h2>
+    <form id="mailingListForm">
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <button type="submit">Join Mailing List</button>
+      <p class="note">We’ll notify you when we launch and send your discount. No spam.</p>
+      <p class="success-message" id="successMessage">Thanks! You’re on the list.</p>
+    </form>
+  </section>
+
+  <footer>
+    © 2025 Vetiva · <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+</div>
+
+<script>
+  const form = document.getElementById('mailingListForm');
+  const successMessage = document.getElementById('successMessage');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    // Here you would normally submit to your backend or mailing list service.
+    // For demo, just show success message.
+    successMessage.style.display = 'block';
+    form.email.value = '';
+  });
+</script>
+
+</body>
+</html>
