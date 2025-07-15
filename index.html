@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vetiva – Pet Wellness Plans</title>
+  <meta name="description" content="Affordable pet wellness plans. Get 20% off at launch. Vetiva is coming soon." />
+  <link rel="icon" href="favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --background: #fefefe;
+      --text: #2c3e50;
+      --muted: #7f8c8d;
+      --card-bg: #ffffff;
+      --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to bottom right, #ffffff, #f5f7fa);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.6;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 4em 1.5em 2em;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 2.5em;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      font-weight: 600;
+      margin-bottom: 0.3em;
+      text-align: center;
+    }
+
+    .subheadline {
+      font-size: 1.125rem;
+      text-align: center;
+      margin-bottom: 2em;
+      color: var(--text);
+      max-width: 600px;
+    }
+
+    .plans {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5em;
+      margin-bottom: 2em;
+      max-width: 600px;
+      width: 100%;
+    }
+
+    .plan {
+      background-color: var(--card-bg);
+      padding: 1.5em;
+      border-radius: 12px;
+      box-shadow: 0 6px 20px var(--shadow);
+    }
+
+    .plan h3 {
+      margin-top: 0;
+      font-size: 1.25rem;
+      margin-bottom: 0.5em;
+    }
+
+    .plan ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+
+    .form-card {
+      background-color: var(--card-bg);
+      padding: 2em;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px var(--shadow);
+      width: 100%;
+      max-width: 420px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    form {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+    }
+
+    input[type="email"] {
+      padding: 1em;
+      border: 1.5px solid var(--primary);
+      border-radius: 8px;
+      font-size: 1rem;
+      width: 100%;
+    }
+
+    input[type="email"]:focus {
+      outline: none;
+      border-color: #357ab8;
+      box-shadow: 0 0 0 2px rgba(53, 122, 184, 0.2);
+    }
+
+    button {
+      padding: 1em;
+      font-size: 1rem;
+      font-weight: 600;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ab8;
+    }
+
+    .form-note {
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 1em;
+    }
+
+    footer {
+      margin-top: 4em;
+      padding: 2em 1em;
+      font-size: 0.9rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--text);
+      text-decoration: none;
+    }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 3em 1em;
+      }
+
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .subheadline {
+        font-size: 1rem;
+      }
+
+      .form-card {
+        padding: 1.5em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.png" alt="Vetiva Logo - Pet Wellness" class="logo" />
+    <h1>Wellness care for your pet, made simple.</h1>
+    <p class="subheadline">Affordable plans for vaccinations, deworming, and more. Vetiva launches soon — sign up and get 20% off your first plan.</p>
+
+    <div class="plans">
+      <div class="plan">
+        <h3>Basic – €10 / month</h3>
+        <ul>
+          <li>1 Core Vaccination per Year</li>
+          <li>1 Deworming Treatment per Year</li>
+          <li>Annual Health Checkup</li>
+        </ul>
+      </div>
+      <div class="plan">
+        <h3>Premium – €18 / month</h3>
+        <ul>
+          <li>Everything in Basic</li>
+          <li>2 Additional Vet Consultations per Year (online or in-clinic)</li>
+          <li>Dental Cleaning (once per year)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="form-card">
+      <form id="email-form" action="https://formspree.io/f/xrblzpww" method="POST">
+        <input type="email" name="email" placeholder="you@example.com" aria-label="Email address" required />
+        <button type="submit">Join Mailing List</button>
+      </form>
+      <p class="form-note">We’ll notify you when we launch and send your discount. No spam.</p>
+    </div>
+
+    <footer>
+      © 2025 Vetiva · <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+    </footer>
+  </div>
+
+  <script>
+    const form = document.getElementById("email-form");
+    const button = form.querySelector("button");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const action = form.getAttribute("action");
+
+      button.disabled = true;
+      button.textContent = "Submitting...";
+
+      try {
+        const response = await fetch(action, {
+          method: "POST",
+          body: formData,
+          headers: { 'Accept': 'application/json' }
+        });
+
+        if (response.ok) {
+          form.reset();
+          button.textContent = "Thanks! You’re on the list.";
+        } else {
+          button.textContent = "Try Again";
+        }
+      } catch (err) {
+        button.textContent = "Network Error";
+      } finally {
+        setTimeout(() => {
+          button.disabled = false;
+          button.textContent = "Join Mailing List";
+        }, 4000);
+      }
+    });
+  </script>
+</body>
+</html>
