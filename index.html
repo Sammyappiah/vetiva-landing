@@ -130,3 +130,68 @@
       font-size: 0.9rem;
       color: #777;
     }
+    footer a {
+      color: #444;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Vetiva Logo" />
+  </header>
+
+  <main class="container">
+    <h1>Simple Pet Wellness Plans</h1>
+    <p class="subtitle">Affordable annual care for your dog or cat</p>
+
+    <section class="plans">
+      <div class="plan">
+        <h2>Basic Plan</h2>
+        <p class="price">€10 / month</p>
+        <ul class="features">
+          <li>1 Core Vaccination per Year</li>
+          <li>1 Deworming Treatment (fully covered)</li>
+          <li>Annual Health Checkup</li>
+        </ul>
+        <p class="note">Deworming is fully covered — no excess or claims required.</p>
+        <p class="note">€30 excess per other treatment.</p>
+      </div>
+      <div class="plan premium">
+        <h2>Premium Plan</h2>
+        <p class="price">€14 / month</p>
+        <ul class="features">
+          <li>Everything in Basic</li>
+          <li>1 Additional In-Person Consultation</li>
+          <li>Dental Cleaning</li>
+        </ul>
+        <p class="note">Deworming is fully covered — no excess or claims required.</p>
+        <p class="note">€30 excess per other treatment.</p>
+      </div>
+    </section>
+
+    <div class="email-signup">
+      <h2>Get Vetiva Updates</h2>
+      <form onsubmit="showSuccess(event)">
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Get Vetiva Updates</button>
+        <div class="success-message" id="successBox">Thanks! You’re on the list.</div>
+      </form>
+    </div>
+
+  </main>
+
+  <footer>
+    © 2025 Vetiva · <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+
+  <script>
+    function showSuccess(e) {
+      e.preventDefault();
+      document.getElementById('successBox').style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
