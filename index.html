@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vetiva – Pet Wellness Plans</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #f9f9f9;
+      color: #222;
+      line-height: 1.6;
+    }
+    header {
+      padding: 2rem;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    header img {
+      height: 90px;
+    }
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    p.subtitle {
+      color: #555;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+    .plans {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    .plan {
+      background: #fff;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      position: relative;
+    }
+    .plan.popular {
+      border: 2px solid #008060;
+    }
+    .badge {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      background: #008060;
+      color: #fff;
+      padding: 0.25rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+    .plan h2 {
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .price {
+      font-size: 1.2rem;
+      color: #008060;
+      margin-bottom: 1rem;
+    }
+    ul.features {
+      list-style: none;
+      margin-top: 1rem;
+    }
+    ul.features li {
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.5rem;
+    }
+    ul.features li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #008060;
+      font-weight: bold;
+    }
+    .mailing-list {
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .mailing-list h3 {
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+    .mailing-list form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .mailing-list input[type="email"] {
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      width: 100%;
+      max-width: 320px;
+      font-size: 1rem;
+    }
+    .mailing-list button {
+      padding: 0.75rem 1.5rem;
+      background: #008060;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    .mailing-list button:hover {
+      background: #00664c;
+    }
+    footer {
+      margin-top: 3rem;
+      padding: 2rem 1rem;
+      text-align: center;
+      font-size: 0.9rem;
+      color: #666;
+    }
+    footer a {
+      color: #008060;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Vetiva Logo" />
+  </header>
+
+  <div class="container">
+    <h1>Simple, Affordable Pet Wellness Plans</h1>
+    <p class="subtitle">Choose a plan that fits your pet’s needs</p>
+
+    <div class="plans">
+      <div class="plan">
+        <h2>Basic</h2>
+        <p class="price">€10 / month</p>
+        <ul class="features">
+          <li>1 Core Vaccination per Year</li>
+          <li>1 Deworming Treatment per Year</li>
+          <li>Annual Health Checkup</li>
+        </ul>
+      </div>
+
+      <div class="plan popular">
+        <div class="badge">Most Popular</div>
+        <h2>Premium</h2>
+        <p class="price">€14 / month</p>
+        <ul class="features">
+          <li>Everything in Basic</li>
+          <li>2 In-Person Vet Consultations per Year</li>
+          <li>Dental Cleaning (once per year)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="mailing-list">
+      <h3>Join the Waitlist</h3>
+      <form>
+        <input type="email" placeholder="Enter your email" required />
+        <button type="submit">Join the Waitlist</button>
+      </form>
+      <p style="margin-top: 1rem; color: #555;">We’ll notify you when we launch and send your discount.</p>
+    </div>
+  </div>
+
+  <footer>
+    © 2025 Vetiva · <a href="mailto:admin@vetiva.ro">admin@vetiva.ro</a>
+  </footer>
+
+</body>
+</html>
